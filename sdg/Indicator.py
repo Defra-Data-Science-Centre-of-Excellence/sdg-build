@@ -317,7 +317,7 @@ class Indicator(Loggable):
         # First, check for an open-sdg-style "reporting_status" metadata field,
         # for a value of "complete".
         reporting_status = self.get_meta_field_value('reporting_status')
-        if reporting_status is not None and reporting_status == 'complete':
+        if reporting_status is not None and reporting_status in ['final', 'interim']:
             return True
         # If there was some other reporting status, assume not complete.
         elif reporting_status is not None:
